@@ -1,0 +1,926 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Para meu amor ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --vinho: #713d4b;
+    --vinho-escuro: #492b35;
+    --rosa: #ead4d2;
+    --creme: #faf5ef;
+    --dourado: #b99a72;
+    --texto: #59464a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--creme);
+    color: var(--texto);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+}
+
+.script {
+    font-family: 'Cormorant Garamond', cursive;
+    color: var(--vinho);
+}
+
+/* MÚSICA */
+
+.music-player {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 1000;
+}
+
+.music-player button {
+    background: var(--vinho);
+    color: white;
+    border: 1px solid #d7b9ad;
+    padding: 13px 19px;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px #00000025;
+    font-size: 12px;
+}
+
+.music-player button:hover {
+    background: var(--vinho-escuro);
+}
+
+.music-player audio {
+    display: none;
+}
+
+/* CAPA */
+
+.hero {
+    min-height: 100vh;
+    background:
+    linear-gradient(rgba(48,24,32,.55), rgba(48,24,32,.65)),
+    url("fotos/foto1.png") center/cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 30px;
+}
+
+.hero .pequeno {
+    letter-spacing: 5px;
+    font-size: 11px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 8vw, 78px);
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 15px;
+    letter-spacing: 1px;
+    line-height: 1.8;
+}
+
+.hero .script {
+    color: #f3d9d4;
+    font-size: 48px;
+    margin-top: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background: var(--vinho);
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 13px;
+    letter-spacing: 1px;
+    transition: .3s;
+    margin-top: 30px;
+}
+
+.btn:hover {
+    background: var(--vinho-escuro);
+    transform: translateY(-3px);
+}
+
+.heart {
+    margin-top: 35px;
+    font-size: 22px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+/* INTRODUÇÃO */
+
+.intro {
+    padding: 100px 25px;
+    text-align: center;
+    max-width: 850px;
+    margin: auto;
+}
+
+.intro .script {
+    font-size: 45px;
+}
+
+.intro h2 {
+    font-size: 35px;
+    margin: 15px 0 25px;
+}
+
+.intro p {
+    font-size: 16px;
+    line-height: 2;
+    max-width: 650px;
+    margin: auto;
+}
+
+/* GALERIA */
+
+.gallery {
+    background: #f0e5df;
+    padding: 90px 7%;
+    text-align: center;
+}
+
+.section-label {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--dourado);
+}
+
+.gallery h2 {
+    font-size: 38px;
+    margin: 15px 0;
+}
+
+.gallery-description {
+    font-size: 14px;
+    margin-bottom: 45px;
+}
+
+.photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    max-width: 1050px;
+    margin: auto;
+}
+
+.photo {
+    background: white;
+    padding: 10px 10px 18px;
+    box-shadow: 0 8px 25px #49343a12;
+    transition: .4s;
+}
+
+.photo:nth-child(even) {
+    transform: translateY(20px);
+}
+
+.photo:hover {
+    transform: translateY(-5px);
+}
+
+.photo img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+}
+
+.photo span {
+    display: block;
+    margin-top: 12px;
+    font-family: 'Great Vibes',;
+    font-size: 23px;
+    color: var(--vinho);
+}
+
+/* DECLARAÇÃO */
+
+.letter-section {
+    padding: 110px 25px;
+    text-align: center;
+}
+
+.letter-section h2 {
+    font-size: 38px;
+    margin: 15px 0 35px;
+}
+
+.letter-text {
+    max-width: 680px;
+    margin: auto;
+    text-align: left;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    line-height: 2.1;
+}
+
+.letter-text p {
+    margin-bottom: 20px;
+}
+
+.signature {
+    text-align: right;
+    font-family: 'Great Vibes', cursive;
+    font-size: 27px;
+    color: var(--vinho);
+    margin-top: 35px;
+}
+
+/* MOMENTOS */
+
+.moments {
+    padding: 90px 25px;
+    text-align: center;
+    background: #ead9d3;
+}
+
+.moments h2 {
+    font-size: 36px;
+    margin: 15px 0 25px;
+}
+
+.moments p {
+    max-width: 650px;
+    margin: auto;
+    font-size: 16px;
+    line-height: 2;
+}
+
+/* SURPRESA */
+
+.surprise {
+    background: var(--vinho-escuro);
+    color: white;
+    padding: 110px 20px;
+    text-align: center;
+}
+
+.surprise .script {
+    color: #e8c7c5;
+    font-size: 48px;
+}
+
+.surprise h2 {
+    font-size: 38px;
+    margin: 15px 0;
+}
+
+.surprise p {
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+.surprise .btn {
+    background: #d7b9ad;
+    color: #492b35;
+}
+
+/* ENVELOPE */
+
+.envelope-area {
+    margin: 55px auto 0;
+    max-width: 500px;
+}
+
+.envelope {
+    position: relative;
+    width: 250px;
+    height: 165px;
+    background: #e8cfc3;
+    margin: 35px auto;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px #00000030;
+    transition: .3s;
+}
+
+.envelope:hover {
+    transform: translateY(-7px);
+}
+
+.envelope:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-left: 125px solid transparent;
+    border-right: 125px solid transparent;
+    border-top: 100px solid #d7b5aa;
+    transform-origin: top;
+    z-index: 2;
+    transition: .5s;
+}
+
+.envelope:after {
+    content: "♥";
+    position: absolute;
+    top: 63px;
+    left: 108px;
+    color: white;
+    font-size: 35px;
+    z-index: 3;
+}
+
+.envelope.open:before {
+    transform: rotateX(180deg);
+}
+
+.envelope-label {
+    color: var(--vinho);
+    font-family: 'Great Vibes', cursive;
+    font-size: 25px;
+    padding-top: 115px;
+    position: relative;
+    z-index: 1;
+}
+
+.envelope-hint {
+    font-size: 12px !important;
+    opacity: .8;
+}
+
+/* CARTA */
+
+#surprise-letter {
+    display: none;
+    max-width: 580px;
+    background: #fffaf3;
+    color: var(--texto);
+    padding: 40px 30px;
+    margin: 40px auto 0;
+    border-radius: 4px;
+    box-shadow: 0 10px 40px #00000030;
+    animation: appear 1s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#surprise-letter h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 43px;
+    color: var(--vinho);
+    margin-bottom: 25px;
+}
+
+#surprise-letter p {
+    font-size: 15px;
+    line-height: 2;
+    margin-bottom: 15px;
+}
+
+.destination {
+    border-top: 1px solid #ddc9bc;
+    border-bottom: 1px solid #ddc9bc;
+    padding: 25px 10px;
+    margin: 25px 0;
+}
+
+.destination h3 {
+    font-size: 28px;
+    color: var(--vinho);
+    margin-bottom: 10px;
+}
+
+.destination .script {
+    font-size: 32px;
+}
+
+/* CORAÇÕES */
+
+.floating-heart {
+    position: fixed;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 2000;
+    color: #d58a98;
+    animation: heartFloat 3s ease-out forwards;
+}
+
+@keyframes heartFloat {
+    0% {
+        opacity: 0;
+        transform: translateY(0) scale(.5) rotate(0deg);
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-350px) scale(1.4) rotate(25deg);
+    }
+}
+
+/* RODAPÉ */
+
+footer {
+    padding: 30px;
+    background: #302127;
+    color: #f5e8e1;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+/* CELULAR */
+
+@media(max-width: 700px) {
+
+    .photos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .photo img {
+        height: 210px;
+    }
+
+    .photo:nth-child(even) {
+        transform: none;
+    }
+
+    .hero .pequeno {
+        letter-spacing: 3px;
+    }
+
+    .intro h2,
+    .gallery h2,
+    .letter-section h2,
+    .moments h2 {
+        font-size: 29px;
+    }
+
+    .letter-text {
+        font-size: 16px;
+    }
+
+    #surprise-letter {
+        padding: 30px 20px;
+    }
+
+    .music-player {
+        right: 12px;
+        bottom: 12px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- MÚSICA -->
+<div class="music-player" id="musicPlayer" style="display:none">
+
+    <audio id="musica" loop>
+        <source src="musica.mp3" type="audio/mpeg">
+    </audio>
+
+    <button onclick="tocarMusica()" id="musicButton">
+        ♫ Ouvir nossa música
+    </button>
+
+</div>
+
+
+<!-- CAPA -->
+<header class="hero">
+
+    <p class="pequeno">UMA PEQUENA SURPRESA PARA VOCÊ</p>
+
+    <h1>Feliz aniversário!</h1>
+
+    <p>Hoje é dia de celebrar a pessoa incrível que você é.</p>
+
+    <div class="script">Meu amor ❤️</div>
+
+    <a href="#nossa-historia" class="btn">
+        Tenho algo para você
+    </a>
+
+    <div class="heart">♡</div>
+
+</header>
+
+
+<!-- INTRODUÇÃO -->
+<section class="intro" id="nossa-historia">
+
+    <div class="script">Para você...</div>
+
+    <h2>Algumas coisas merecem ser eternizadas.</h2>
+
+    <p>
+        Talvez eu não consiga colocar em palavras tudo aquilo
+        que sinto, mas quis encontrar uma maneira diferente
+        de demonstrar o quanto você é especial para mim.
+
+        Este pequeno espaço é sobre nós, sobre nossos momentos
+        e sobre tudo aquilo que ainda quero viver ao seu lado.
+    </p>
+
+</section>
+
+
+<!-- FOTOS -->
+<section class="gallery">
+
+    <div class="section-label">Nossa história</div>
+
+    <h2>Memórias que guardo comigo</h2>
+
+    <p class="gallery-description">
+        Porque os melhores momentos merecem ser lembrados.
+    </p>
+
+    <div class="photos">
+
+        <div class="photo">
+            <img src="fotos/foto1.png" alt="Nossa fotografia">
+            <span>Eu</span>
+        </div>
+
+        <div class="photo">
+            <img src="fotos/foto2.png" alt="Nossa fotografia">
+            <span>Te</span>
+        </div>
+
+        <div class="photo">
+            <img src="fotos/foto3.jpeg" alt="Nossa fotografia">
+            <span>Amo!!!</span>
+        </div>
+
+        <div class="photo">
+            <img src="fotos/foto4.png" alt="Nossa fotografia">
+            <span>♥️</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- DECLARAÇÃO -->
+<section class="letter-section">
+
+    <div class="section-label">Com carinho</div>
+
+    <h2>Uma declaração para você</h2>
+
+    <div class="letter-text">
+
+        <p>Meu amor,</p>
+
+        <p>
+            Quem diria que, justamente no finalzinho deste ano,
+            eu encontraria alguém que despertaria tantos
+            sentimentos bons em mim?
+        </p>
+
+        <p>
+            Em tão pouco tempo, você já conseguiu se tornar
+            alguém muito especial. Sou grata por nossos caminhos
+            terem se cruzado, pelas conversas, pelas risadas,
+            pelo carinho e por cada momento que estamos
+            compartilhando.
+        </p>
+
+        <p>
+            Não sei exatamente o que o futuro reserva para nós,
+            mas tenho um desejo sincero de que a nossa história
+            continue florescendo e encontre seu caminho para
+            algo cada vez mais bonito e sério.
+        </p>
+
+        <p>
+            Quero que a gente tenha tempo para se conhecer,
+            crescer juntos e descobrir tudo aquilo que ainda
+            podemos viver.
+        </p>
+
+        <p>
+            Saiba que oro por nós dois. Peço a Deus que cuide
+            dos nossos caminhos, das nossas escolhas e dos
+            sentimentos que estamos construindo.
+        </p>
+
+        <p>
+            Acredito que Ele tem um propósito lindo para nossas
+            vidas e espero que possamos descobrir isso juntos,
+            com carinho, respeito e sabedoria.
+        </p>
+
+        <p>
+            Eu já te amo, e não digo isso esperando que tudo
+            aconteça depressa, mas porque é o sentimento bonito
+            que nasceu em mim e que quero viver com sinceridade.
+        </p>
+
+        <p>
+            Quero que seu aniversário seja sempre uma data
+            especial para nós. Que você tenha um novo ciclo
+            cheio de saúde, conquistas, felicidade e da presença
+            de Deus em cada passo.
+        </p>
+
+        <p>
+            E, neste ano, desejo que você tenha um aniversário
+            muito feliz ao meu lado! Espero que goste da surpresa
+            que preparei com tanto carinho.
+        </p>
+
+        <p>
+            Quero aproveitar esses dias com você, criar novas
+            lembranças e guardar mais um capítulo bonito
+            da nossa história.
+        </p>
+
+        <p>
+            Feliz aniversário, meu amor! ❤️
+        </p>
+
+        <div class="signature">
+            Com carinho, sua furuta mulher!!     🥰
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MOMENTOS -->
+<section class="moments">
+
+    <div class="script">E sabe de uma coisa?</div>
+
+    <h2>Eu gosto de nós.</h2>
+
+    <p>
+        Gosto da nossa companhia, da nossa cumplicidade
+        e da tranquilidade de poder ser eu mesma ao seu lado.
+
+        Se existe algo que desejo para nós, é que nunca
+        nos faltem vontade, carinho e motivos para continuar
+        descobrindo o mundo juntos.
+    </p>
+
+</section>
+
+
+<!-- SURPRESA -->
+<section class="surprise">
+
+    <div class="script">Ainda tem mais...</div>
+
+    <h2>Guardei uma última surpresa.</h2>
+
+    <p>
+        Porque comemorar sua vida é especial,
+        mas criar novas memórias com você é ainda melhor.
+    </p>
+
+    <p>Existe uma cartinha esperando para ser aberta...</p>
+
+    <div class="envelope-area">
+
+        <div
+            class="envelope"
+            id="envelope"
+            onclick="abrirCarta()"
+            role="button"
+            tabindex="0"
+            aria-label="Abrir carta surpresa"
+            onkeydown="if(event.key === 'Enter' || event.key === ' '){event.preventDefault();abrirCarta();}"
+        >
+            <div class="envelope-label">Para meu amor</div>
+        </div>
+
+        <p class="envelope-hint">
+            Toque no envelope para descobrir ❤️
+        </p>
+
+    </div>
+
+
+    <!-- CARTA QUE REVELA A VIAGEM -->
+
+    <div id="surprise-letter">
+
+        <h2>Uma experiência para nós dois...</h2>
+
+        <p>Meu amor,</p>
+
+        <p>
+            O presente que preparei para você não é apenas
+            um lugar, mas um tempinho nosso.
+        </p>
+
+        <p>
+            De 04 a 06 de dezembro, quero que a gente deixe
+            um pouquinho da rotina de lado, aproveite nossa
+            companhia e crie lembranças que possamos guardar
+            com carinho.
+        </p>
+
+        <p>
+            Quero comemorar sua vida, seu novo ciclo e a alegria
+            de poder estar ao seu lado nessa data.
+        </p>
+
+        <div class="destination">
+
+            <div class="script">Nosso próximo destino</div>
+
+            <h3>Uma viagem a dois! 🥹</h3>
+
+            <p>
+                Um lugar especial, alguns dias juntinhos
+                e uma experiência que quero muito viver
+                com você.
+            </p>
+
+        </div>
+
+        <p>
+            Agora é só descobrir para onde vamos...
+        </p>
+
+        <a
+            href="https://www.airbnb.com.br/rooms/1282543181536844549?adults=2&children=0&infants=0&pets=0&wishlist_item_id=11007051409681&check_in=2026-12-04&check_out=2026-12-06&source_impression_id=p3_1794870253_P3dAScYS_PeT2Fdy&previous_page_section_name=1000"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn"
+        >
+            REVELAR NOSSO DESTINO ❤️
+        </a>
+
+        <p style="margin-top:25px; font-family:'Great Vibes'; font-size:27px;">
+            Mal posso esperar para viver isso com você.
+        </p>
+
+    </div>
+
+</section>
+
+
+<footer>
+    FEITO COM AMOR, ESPECIALMENTE PARA VOCÊ ❤️
+</footer>
+
+
+<script>
+
+// MÚSICA
+
+const musica = document.getElementById("musica");
+const musicPlayer = document.getElementById("musicPlayer");
+const musicButton = document.getElementById("musicButton");
+
+// Só mostra o botão se o arquivo de música existir.
+
+musica.addEventListener("canplay", function() {
+    musicPlayer.style.display = "block";
+});
+
+musica.addEventListener("error", function() {
+    musicPlayer.style.display = "none";
+});
+
+function tocarMusica() {
+
+    if (musica.paused) {
+
+        musica.play().then(() => {
+            musicButton.innerHTML = "♫ Pausar música";
+        }).catch(() => {
+            musicButton.innerHTML = "Tente novamente ♫";
+        });
+
+    } else {
+
+        musica.pause();
+        musicButton.innerHTML = "♫ Ouvir nossa música";
+
+    }
+
+}
+
+
+// CORAÇÕES FLUTUANTES
+
+function criarCoracao() {
+
+    const coracao = document.createElement("span");
+
+    coracao.classList.add("floating-heart");
+
+    coracao.innerHTML = Math.random() > 0.5 ? "♥" : "♡";
+
+    coracao.style.left = Math.random() * 95 + "vw";
+
+    coracao.style.fontSize =
+        (15 + Math.random() * 20) + "px";
+
+    document.body.appendChild(coracao);
+
+    setTimeout(() => {
+        coracao.remove();
+    }, 3000);
+
+}
+
+function chuvaDeAmor() {
+
+    for (let i = 0; i < 24; i++) {
+
+        setTimeout(criarCoracao, i * 120);
+
+    }
+
+}
+
+
+// ABRIR A CARTA
+
+function abrirCarta() {
+
+    const carta = document.getElementById("surprise-letter");
+    const envelope = document.getElementById("envelope");
+
+    if (carta.style.display === "block") {
+        return;
+    }
+
+    envelope.classList.add("open");
+
+    chuvaDeAmor();
+
+    setTimeout(function() {
+
+        carta.style.display = "block";
+
+        carta.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+    }, 500);
+
+}
+
+</script>
+
+</body>
+</html>
